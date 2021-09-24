@@ -21,6 +21,10 @@ function hiddenWord() {
 };
 // Interface du menu -----------------------------------------------------------------------------------------------
 function menu() {
+    word = randomWord();
+    wordSplit = word.split("");
+    maskWord = hiddenWord();
+    playerLife = 7;
     let navig = prompt(`Bonjour et bienvenue dans le jeu du Pendu ! \nQue voulez vous faire ?\nj = jouer\nr = règles\nq = quitter`)
     // let navigLow = navig.toLowerCase
     navig === "j" ? game() : navig === "r" ? rules() : navig === "q" ? "bye" : menu();
@@ -29,27 +33,17 @@ function rules() {
     alert(`Ceci sont les règles`);
     menu();
 };
-// Relance la partie si veux rejouer à la fin de la partie ----------------------------------------------------------
-function replay() {
-word = randomWord();
-wordSplit = word.split("");
-maskWord = hiddenWord();
-playerLife = 7;
-game();
-};
 // Fonction principale de jeu --------------------------------------------------------------------------------------
 function game() {
     if ((maskWord.indexOf("_") === -1)) {
         alert(`Bravo vous avez gagné ! Le mot était "${word}" !`);
-        let replay = confirm(`Rejouer ?`);
-        replay = undefined ? menu() : replay();
-        // Quand le joueur trouve toutes les lettres (plus d'underscores), affiche le message de victoire et la possibilité de rejouer
+        menu();
+        // Quand le joueur trouve toutes les lettres (plus d'underscores), affiche le message de victoire et retourne au menu
     }
     else if(playerLife === 0) {
         alert(`Dommage, vous avez perdu... Le mot était "${word}" !`);
-        let replay = confirm(`Rejouer ?`);
-        replay = undefined ? menu() : replay();
-        // Quand le joueur n'a plus de vie, affiche le message de defaite et la possibilité de rejouer
+        menu();
+        // Quand le joueur n'a plus de vie, affiche le message de defaite et retourne au menu
     }
     // Interface de Jeu --------------------------------------------------------------------------------------------
     else {
