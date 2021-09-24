@@ -6,7 +6,7 @@ let playerLife = 7;
 
 // FONCTIONS ########################################################################################################
 function randomWord() {
-    let wordList = ["lapin","voiture","musique","boolean","shifoumi","wagonnet","bisbille","croquelardon","procrastination","panegyrique","volatille","fennec","aventure","robotique"]
+    let wordList = ["lapin","voiture","musique","boolean","shifoumi","wagonnet","bisbille","croquelardon","procrastination","panegyrique","volatille","fennec","aventure","robotique","vitrine","contrister","margouillis","paraskevidékatriaphobie","eplapourdi","paltoquet","victorieux","diablotin","dechiffrage","parasite","illusion","organisation","kayak","interview","acajou","coccyx","yaourt","seisme","zipper","whisky","glue","zut","ski","tic","jet","val","git","abo","gaz","momie","voleur","defaitiste","divulguer","mensonge","applatir","hip","hop","cercle","tyran","walabi","caimans","appartenance","identite","dentiste","collection","poster","calibrer","jargon","zozoter","arbalete","vitesse","devinette","humour","precipitation","verite","violence","mission","exploration","participation","recherche","medieval","temps","phobie","poursuite","horreur","perdu","espoir","recours","stylo","reserve","cachette","chateau","tableau","fuite","filature","armee","abattue","synonyme","chantonner","secourir","ancien","memorisation","prevision","anticiper","finition","commencement","histoire","ignorance","plainte","combat","dispaitre","plastique","ventriloque","affliger","bonheur","bienveillance","proteger","ordinateur","commander","idee","imaginaire"];
    let number = Math.floor(Math.random() * wordList.length)
    return wordList[number];
    // Prends un mot aléatoirement dans la liste
