@@ -1,6 +1,7 @@
 let word = randomWord();
 let wordSplit = word.split("");
 let maskWord = hiddenWord();
+let playerLife = 7;
 
 function randomWord() {
     let wordList = ["lapin","voiture"]
@@ -14,10 +15,26 @@ function hiddenWord() {
     }
     return hidden;
 }
-
+function game() {
+    let enterLetter = prompt(`\n${playerLife} chances restantes, entrez une lettre pour jouer :\n ${maskWord.join(" ")}`);
+    if (enterLetter.length > 1 || enterLetter.length < 1) {
+        game();
+    }
+    else if (wordSplit.indexOf(enterLetter) === -1) {
+        playerLife--;
+        game();
+    }
+    else {
+        for(let n = 0; n < wordSplit.length ; n++) {
+            if (enterLetter === wordSplit[n]) {
+                maskWord.splice(n, 1, enterLetter);
+            }
+            else {
+                 ""
+                }
+            }
+            return game();
+        }
+}
 alert("Bonjour et bienvenue dans le jeu du Pendu !");
-let enterLetter = prompt(`\n7 chances restantes, entrez une lettre pour jouer :\n ${maskWord.join(" ")}`);
-console.log(maskWord);
-console.log(word);
-console.log(wordSplit);
-
+game();
